@@ -3,3 +3,21 @@
 @tailwind utilities;
 
 
+@layer components {
+  .btn {
+    @apply bg-gray-100
+    rounded-md
+    text-sm
+    text-gray-500
+    hover:ring-1
+    hover:ring-gray-200
+    hover:shadow-md
+    shadow-gray-200
+    focus:outline-none
+    active:ring-gray-300
+    m-2
+    w-32
+    h-8
+    transition-shadow
+  }
+}
