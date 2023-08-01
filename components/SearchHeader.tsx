@@ -8,8 +8,8 @@ import SearchHeaderOptions from './SearchHeaderOptions'
 
 export default function SearchHeader() {
   return (
-    <header className='sticky top-0'>
-      <div className='flex w-full py-6 px-10 items-center justify-between'>
+    <header className='sticky top-0 py-6'>
+      <div className='flex w-full px-10 items-center justify-between'>
         <Link href={''}>
           <Image 
             src="/BigAlsCanada.png" 
