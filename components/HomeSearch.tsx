@@ -32,15 +32,15 @@ export default function HomeSearch() {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className='flex w-full max-w-[70%] items-center border border-gray-200 rounded-3xl hover:shadow-md focus:shadow-md transition-shadow sm:max-w-xl lg:max-w-3xl'>
+      <form onSubmit={handleSubmit} className='flex w-full max-w-[70%] h-12 items-center border border-gray-200 rounded-3xl hover:shadow-md focus:shadow-md transition-shadow sm:max-w-xl lg:max-w-3xl'>
         <AiOutlineSearch className='text-lg text-gray-500 m-3 SearchIcon' />
-        <input type="text" placeholder='search' className='flex-grow focus:outline-none'
+        <input type="text" placeholder='my search' className='flex-grow focus:outline-none antialiased'
           onChange={(e) => setInput(e.target.value)}
           value={input}
         />
-        <BsFillMicFill className='text-gray-700 m-3 text-sm' />
+        <BsFillMicFill className='text-gray-600 m-3 text-sm' />
       </form>
-      <div className='mt-3 flex flex-col sm:flex-row'>
+      <div className='mt-3 flex flex-col sm:flex-row antialiased'>
         <button onClick={handleSubmit} className='btn disabled:opacity-70' disabled={!input}>My Search</button>
         <ToastContainer 
           position="bottom-center"
@@ -58,7 +58,7 @@ export default function HomeSearch() {
         <button onClick={randomSearch} className='btn disabled:opacity-70' disabled={randomSearchLoading}>
           {
             randomSearchLoading ?  (
-              <div  className='flex justify-center'>
+              <div className='flex justify-center'>
                 <Image src="spinner.svg" alt="loading" priority={true} width={30} height={30} />
               </div>
             ) : (
