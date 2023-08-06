@@ -7,7 +7,7 @@ export default function Footer() {
       <div className='px-8 py-3 border-b bg-gray-100'>
         <CountryLookup />
       </div>
-      <div className='flex flex-col md:flex-row justify-between items-center px-8 py-3 bg-gray-100'>
+      <div className='flex flex-col md:flex-row justify-between items-center px-8 py-4 bg-gray-100'>
         <ul className='flex items-center space-x-3'>
           <li className='link'>About</li>
           <li className='link'>Adverstising</li>
