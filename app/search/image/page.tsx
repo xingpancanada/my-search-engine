@@ -2,8 +2,8 @@ import ImageSearchResults from '@/components/ImageSearchResults';
 import Link from 'next/link';
 import React from 'react'
 
-async function getResults(q: string){
-  const response = await fetch(`https://www.googleapis.com/customsearch/v1?key=${process.env.GOOGLE_API_KEY}&cx=${process.env.GOOGLE_CONTEXT_KEY}&q=${q}&searchType=image`);
+async function getResults(q: string, startIndex: any){
+  const response = await fetch(`https://www.googleapis.com/customsearch/v1?key=${process.env.GOOGLE_API_KEY}&cx=${process.env.GOOGLE_CONTEXT_KEY}&q=${q}&searchType=image&start=${startIndex}`);
   if(!response.ok) throw new Error("Something went wrong!"); //this is for developers, need to create error page for users to avoid error breaks the app
   const resp = await response.json();
   //return resp.items;
@@ -11,7 +11,9 @@ async function getResults(q: string){
 }
 
 export default async function ImageSearchPage({searchParams}: any) {
-  const data = await getResults(searchParams.searchTerm);
+  const startIndex = searchParams.start || "1";
+
+  const data = await getResults(searchParams.searchTerm, startIndex);
   const results = await data.items;
   console.log(data);
 

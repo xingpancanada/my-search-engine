@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
 import React from 'react'
+import PaginationButtons from './PaginationButtons'
 
 export default function ImageSearchResults({ data }: any) {
   return (
@@ -24,6 +25,9 @@ export default function ImageSearchResults({ data }: any) {
             <p className='text-xs text-gray-500 pt-1 truncate'>{item.displayLink}</p>
           </div>
         ))}
+      </div>
+      <div>
+        <PaginationButtons />
       </div>
     </div>
   )

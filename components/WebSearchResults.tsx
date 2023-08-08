@@ -1,8 +1,9 @@
 import Link from 'next/link'
 import React from 'react'
 import parse from 'html-react-parser';
+import PaginationButtons from './PaginationButtons';
 
-export default function WebSearchResults({data}: any) {
+export default function WebSearchResults({ data }: any) {
   return (
     <div className='mx-12 md:mx-32 pb-24'>
       <p className='text-xs text-gray-500 pb-3 pt-2'>
@@ -14,15 +15,19 @@ export default function WebSearchResults({data}: any) {
             <Link href={item.link} className='truncate'>
               {item.formattedUrl}
             </Link>
-            </div>
-            <div className='text-sm text-blue-700 pt-1 group-hover:underline decoration-blue-800'>
+          </div>
+          <div className='text-sm text-blue-700 pt-1 group-hover:underline decoration-blue-800'>
             <Link href={item.link}>
               {item.title}
             </Link>
-          </div> 
+          </div>
           <p className='text-xs text-gray-500 pt-1 truncate'>{parse(item.htmlSnippet)}</p>
         </div>
       ))}
+
+      <div>
+        <PaginationButtons />
+      </div>
     </div>
   )
 }
