@@ -21,7 +21,7 @@ export default function WebSearchResults({ data }: any) {
               {item.title}
             </Link>
           </div>
-          <p className='text-xs text-gray-500 pt-1 truncate'>{parse(item.htmlSnippet)}</p>
+          <p className='text-xs text-gray-500 pt-1 line-clamp-2'>{parse(item.htmlSnippet)}</p>
         </div>
       ))}
 
